@@ -22,21 +22,21 @@
       <li><a href="photos.html" onclick="closeMenu()">Фотографии</a></li>
       <li><a href="videos.html" onclick="closeMenu()">Видео</a></li>
       <li><a href="genshin.html" onclick="closeMenu()">Genshin</a></li>
-      <li><a href="personal.html" onclick="closeMenu()">Личная жизнь</a></li>
+      <li><a href="personal.html" onclick="closeMenu()">чё та </a></li>
       <li><a href="contacts.html" onclick="closeMenu()">Контакты</a></li>
     </ul>
   </nav>
 
-  <!-- ===== Контент, который будет размываться ===== -->
+  <!-- ===== Контент, который размывается при открытом меню ===== -->
   <div class="content-wrapper" id="contentWrapper">
     <header>
-      <!-- Аватарка (замените src на свою фотографию) -->
-      <img src="ava.jpg" alt="Аватар " class="avatar" />
+      <!-- Аватарка (центруем через CSS) -->
+      <img src="ava.jpg" alt="Аватар вашего брата" class="avatar" />
 
       <!-- «Пузырь» с приветствием -->
       <div class="speech-bubble">
-        <p>Привет! Я занимаюсь фотографией , созданием разных работ в Figme.</p>
-        <p>Добро пожаловать в моё портфолио созданное братом.</p>
+        <p>Привет! Я занимаюсь фотографией и съёмкой видео.</p>
+        <p>Добро пожаловать в моё портфолио.</p>
       </div>
 
       <!-- Анимационная стрелка вниз -->
@@ -90,6 +90,17 @@
             </div>
           </div>
         </a>
+
+        <!-- Карточка «Контакты» -->
+        <a href="contacts.html" class="work-card">
+          <div class="image-container">
+            <img src="preview-contacts.jpg" alt="Контакты" class="work-image" />
+            <div class="overlay">
+              <h3>Контакты</h3>
+              <p>Связаться со мной</p>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -109,7 +120,7 @@
       <p class="footer-text">© 2025 Ваш брат. Все права защищены.</p>
     </footer>
 
-    <!-- Кнопка Scroll to Top -->
+    <!-- ===== Кнопка «Наверх» ===== -->
     <button id="scrollTopBtn" title="Наверх">↑</button>
   </div>
 

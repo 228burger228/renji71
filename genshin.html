@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genshin</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ===== Стили для страницы «Genshin» ===== */
+    .back-link {
+      display: inline-block;
+      margin: 20px;
+      color: #FFFAFA;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .back-link:hover {
+      color: #DCDCDC;
+    }
+    .series-section {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .series-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #FFFAFA;
+      font-family: 'RoadRadio', sans-serif;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    .profile-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 0 auto 40px;
+      max-width: 400px;
+      text-align: center;
+    }
+    .profile-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .profile-info {
+      padding: 20px;
+      color: #4682B4;
+    }
+    .profile-info h3 {
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+    }
+    .profile-info p {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    .characters-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .character-item {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      text-align: center;
+    }
+    .character-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .character-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+    .character-item p {
+      padding: 10px;
+      font-size: 1rem;
+      color: #4682B4;
+      background: #F0F8FF;
+    }
+    @media (max-width: 500px) {
+      .character-item img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ссылка «Назад» -->
+  <a href="index.html" class="back-link">← Назад</a>
+
+  <section class="series-section">
+    <h2>Genshin Impact</h2>
+
+    <!-- Карточка профиля Genshin (пример) -->
+    <div class="profile-card">
+      <img src="genshin-banner.jpg" alt="Genshin Banner">
+      <div class="profile-info">
+        <h3>Мой Genshin ID: 123456789</h3>
+        <p>Уровень приключения: 45</p>
+        <p>Главный персонаж: Аркхондер</p>
+        <p>Сервер: Europe</p>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Мои любимые персонажи</h3>
+    <div class="characters-gallery">
+      <!-- Пример персонажей -->
+      <div class="character-item">
+        <img src="char1.jpg" alt="Персонаж 1">
+        <p>Венти</p>
+      </div>
+      <div class="character-item">
+        <img src="char2.jpg" alt="Персонаж 2">
+        <p>Эола</p>
+      </div>
+      <div class="character-item">
+        <img src="char3.jpg" alt="Персонаж 3">
+        <p>Кэ Цин</p>
+      </div>
+      <div class="character-item">
+        <img src="char4.jpg" alt="Персонаж 4">
+        <p>Нин Гуан</p>
+      </div>
+      <!-- Добавьте ещё персонажей по аналогии -->
+    </div>
+  </section>
+
+  <!-- Футер и Scroll to Top -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/yourbrother" target="_blank">
+        <img src="icon-instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://vk.com/yourbrother" target="_blank">
+        <img src="icon-vk.png" alt="VK" />
+      </a>
+      <a href="https://youtube.com/yourbrothervideo" target="_blank">
+        <img src="icon-youtube.png" alt="YouTube" />
+      </a>
+    </div>
+    <p class="footer-text">© 2025 Ваш брат. Все права защищены.</p>
+  </footer>
+  <button id="scrollTopBtn" title="Наверх">↑</button>
+
+  <script>
+    // Scroll to Top
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollBtn.style.display = 'block';
+        } else {
+          scrollBtn.style.display = 'none';
+        }
+      });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Личная жизнь</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ===== Стили для страницы «Личная жизнь» ===== */
+    .back-link {
+      display: inline-block;
+      margin: 20px;
+      color: #FFFAFA;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .back-link:hover {
+      color: #DCDCDC;
+    }
+    .series-section {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .series-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #FFFAFA;
+      font-family: 'RoadRadio', sans-serif;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Таймлайн */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    /* основная вертикальная линия */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #FFFAFA;
+      transform: translateX(-50%);
+    }
+    /* блоки событий */
+    .timeline-event {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+    }
+    .timeline-event:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .timeline-event:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #1E90FF;
+      border: 4px solid #FFFAFA;
+      z-index: 1;
+    }
+    .timeline-event:nth-child(odd)::before {
+      right: -8px;
+    }
+    .timeline-event:nth-child(even)::before {
+      left: -8px;
+    }
+    .timeline-event h3 {
+      margin-bottom: 6px;
+      color: #FFFAFA;
+      font-size: 1.4rem;
+    }
+    .timeline-event p {
+      color: #FFFAFA;
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::after {
+        left: 20px;
+      }
+      .timeline-event {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+      }
+      .timeline-event:nth-child(odd),
+      .timeline-event:nth-child(even) {
+        left: 0;
+        text-align: left;
+      }
+      .timeline-event::before {
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ссылка «Назад» -->
+  <a href="index.html" class="back-link">← Назад</a>
+
+  <section class="series-section">
+    <h2>Личная жизнь</h2>
+
+    <!-- Таймлайн с ключевыми событиями -->
+    <div class="timeline">
+      <div class="timeline-event">
+        <h3>2000 г. — Рождение</h3>
+        <p>Родился(ась) и провёл(а) детство в небольшом городе.</p>
+      </div>
+      <div class="timeline-event">
+        <h3>2018 г. — Поступление в университет</h3>
+        <p>Начал(а) изучать дизайн и фотографию.</p>
+      </div>
+      <div class="timeline-event">
+        <h3>2020 г. — Первые заказы</h3>
+        <p>Получил(а) первые заказы на фотосессии.</p>
+      </div>
+      <div class="timeline-event">
+        <h3>2022 г. — YouTube канал</h3>
+        <p>Запустил(а) канал, где публикую обучающие видео по постобработке.</p>
+      </div>
+      <div class="timeline-event">
+        <h3>2025 г. — Портфолио</h3>
+        <p>Запускаю свое портфолио, чтобы найти новых клиентов.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Фотографии из личной жизни -->
+  <section class="series-section">
+    <h2>Моменты из жизни</h2>
+    <div class="series-gallery">
+      <div class="series-item">
+        <img src="life1.jpg" alt="Событие 1" />
+        <p>День рождения</p>
+      </div>
+      <div class="series-item">
+        <img src="life2.jpg" alt="Событие 2" />
+        <p>Выпускной</p>
+      </div>
+      <div class="series-item">
+        <img src="life3.jpg" alt="Событие 3" />
+        <p>Путешествие</p>
+      </div>
+      <div class="series-item">
+        <img src="life4.jpg" alt="Событие 4" />
+        <p>Фестивали</p>
+      </div>
+      <!-- Добавьте ещё моменты -->
+    </div>
+  </section>
+
+  <!-- Футер и Scroll to Top -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/yourbrother" target="_blank">
+        <img src="icon-instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://vk.com/yourbrother" target="_blank">
+        <img src="icon-vk.png" alt="VK" />
+      </a>
+      <a href="https://youtube.com/yourbrothervideo" target="_blank">
+        <img src="icon-youtube.png" alt="YouTube" />
+      </a>
+    </div>
+    <p class="footer-text">© 2025 Ваш брат. Все права защищены.</p>
+  </footer>
+  <button id="scrollTopBtn" title="Наверх">↑</button>
+
+  <script>
+    // Scroll to Top
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollBtn.style.display = 'block';
+        } else {
+          scrollBtn.style.display = 'none';
+        }
+      });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

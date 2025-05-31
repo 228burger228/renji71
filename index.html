@@ -21,6 +21,8 @@
       <li><a href="index.html" onclick="closeMenu()">Главная</a></li>
       <li><a href="photos.html" onclick="closeMenu()">Фотографии</a></li>
       <li><a href="videos.html" onclick="closeMenu()">Видео</a></li>
+      <li><a href="genshin.html" onclick="closeMenu()">Genshin</a></li>
+      <li><a href="personal.html" onclick="closeMenu()">Личная жизнь</a></li>
       <li><a href="#" onclick="closeMenu()">Контакты</a></li>
     </ul>
   </nav>
@@ -33,8 +35,8 @@
 
       <!-- «Пузырь» с приветствием -->
       <div class="speech-bubble">
-        <p>Привет! Я занимаюсь фотографией и съёмкой видео.</p>
-        <p>Добро пожаловать в моё портфолио.</p>
+        <p>Привет! Я занимаюсь фотографией , созданием разных работ в Figme.</p>
+        <p>Добро пожаловать в моё портфолио созданное братом.</p>
       </div>
 
       <!-- Анимационная стрелка вниз -->
@@ -66,16 +68,52 @@
             </div>
           </div>
         </a>
+
+        <!-- Карточка «Genshin» -->
+        <a href="genshin.html" class="work-card">
+          <div class="image-container">
+            <img src="preview-genshin.jpg" alt="Genshin" class="work-image" />
+            <div class="overlay">
+              <h3>Genshin</h3>
+              <p>Мой игровой аккаунт и арты</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Карточка «Личная жизнь» -->
+        <a href="personal.html" class="work-card">
+          <div class="image-container">
+            <img src="preview-personal.jpg" alt="Личная жизнь" class="work-image" />
+            <div class="overlay">
+              <h3>Личная жизнь</h3>
+              <p>Немного обо мне</p>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
-    <!-- Пустое пространство, чтобы нижнее меню не слипалось с контентом -->
-    <div class="bottom-space"></div>
+    <!-- ===== Футер с соцсетями ===== -->
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://instagram.com/yourbrother" target="_blank">
+          <img src="icon-instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://vk.com/yourbrother" target="_blank">
+          <img src="icon-vk.png" alt="VK" />
+        </a>
+        <a href="https://youtube.com/yourbrothervideo" target="_blank">
+          <img src="icon-youtube.png" alt="YouTube" />
+        </a>
+      </div>
+      <p class="footer-text">© 2025 Ваш брат. Все права защищены.</p>
+    </footer>
+
+    <!-- Кнопка Scroll to Top -->
+    <button id="scrollTopBtn" title="Наверх">↑</button>
   </div>
 
-  <!-- ===== Скрипт для YouTube-плеера (если нужен) ===== -->
-  <div id="ytPlayer"></div>
-
+  <!-- ===== Скрипты ===== -->
   <script>
     // Управление гамбургером и размытием
     document.addEventListener('DOMContentLoaded', () => {
@@ -87,6 +125,19 @@
         hamburgerBtn.classList.toggle('active');
         sideMenu.classList.toggle('active');
         contentWrapper.classList.toggle('blurred');
+      });
+
+      // Scroll to Top
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollBtn.style.display = 'block';
+        } else {
+          scrollBtn.style.display = 'none';
+        }
+      });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
 

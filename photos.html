@@ -98,5 +98,39 @@
       <!-- Добавьте свои работы аналогичным образом -->
     </div>
   </section>
+
+  <!-- Футер и Scroll to Top -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://instagram.com/yourbrother" target="_blank">
+        <img src="icon-instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://vk.com/yourbrother" target="_blank">
+        <img src="icon-vk.png" alt="VK" />
+      </a>
+      <a href="https://youtube.com/yourbrothervideo" target="_blank">
+        <img src="icon-youtube.png" alt="YouTube" />
+      </a>
+    </div>
+    <p class="footer-text">© 2025 Ваш брат. Все права защищены.</p>
+  </footer>
+  <button id="scrollTopBtn" title="Наверх">↑</button>
+
+  <script>
+    // Scroll to Top
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollBtn.style.display = 'block';
+        } else {
+          scrollBtn.style.display = 'none';
+        }
+      });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>

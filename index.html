@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио вашего брата</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Гамбургер (три полоски) ===== -->
+  <div class="hamburger" id="hamburgerBtn">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+
+  <!-- ===== Выезжающее меню ===== -->
+  <nav class="side-menu" id="sideMenu">
+    <h2>Меню</h2>
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Главная</a></li>
+      <li><a href="photos.html" onclick="closeMenu()">Фотографии</a></li>
+      <li><a href="videos.html" onclick="closeMenu()">Видео</a></li>
+      <li><a href="#" onclick="closeMenu()">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Контент, который будет размываться ===== -->
+  <div class="content-wrapper" id="contentWrapper">
+    <header>
+      <!-- Аватарка (замените src на свою фотографию) -->
+      <img src="ava-brother.jpg" alt="Аватар вашего брата" class="avatar" />
+
+      <!-- «Пузырь» с приветствием -->
+      <div class="speech-bubble">
+        <p>Привет! Я занимаюсь фотографией и съёмкой видео.</p>
+        <p>Добро пожаловать в моё портфолио.</p>
+      </div>
+
+      <!-- Анимационная стрелка вниз -->
+      <div class="arrow-down"></div>
+    </header>
+
+    <!-- ===== Секция «Мои работы» ===== -->
+    <section class="works-section">
+      <h2 class="section-title">Мои работы</h2>
+      <div class="works-gallery">
+        <!-- Карточка «Фотографии» -->
+        <a href="photos.html" class="work-card">
+          <div class="image-container">
+            <img src="preview-photo.jpg" alt="Фотографии" class="work-image" />
+            <div class="overlay">
+              <h3>Фотографии</h3>
+              <p>Портреты и репортажи</p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Карточка «Видео» -->
+        <a href="videos.html" class="work-card">
+          <div class="image-container">
+            <img src="preview-video.jpg" alt="Видео" class="work-image" />
+            <div class="overlay">
+              <h3>Видео</h3>
+              <p>Съёмка и монтаж</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Пустое пространство, чтобы нижнее меню не слипалось с контентом -->
+    <div class="bottom-space"></div>
+  </div>
+
+  <!-- ===== Скрипт для YouTube-плеера (если нужен) ===== -->
+  <div id="ytPlayer"></div>
+
+  <script>
+    // Управление гамбургером и размытием
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburgerBtn = document.getElementById('hamburgerBtn');
+      const sideMenu = document.getElementById('sideMenu');
+      const contentWrapper = document.getElementById('contentWrapper');
+
+      hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        sideMenu.classList.toggle('active');
+        contentWrapper.classList.toggle('blurred');
+      });
+    });
+
+    function closeMenu() {
+      document.getElementById('hamburgerBtn').classList.remove('active');
+      document.getElementById('sideMenu').classList.remove('active');
+      document.getElementById('contentWrapper').classList.remove('blurred');
+    }
+  </script>
+</body>
+</html>

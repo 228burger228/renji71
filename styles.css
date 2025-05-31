@@ -14,9 +14,10 @@
 }
 
 body {
-  background-color: #4682B4; /* основной фон */
+  /* Градиентный фон вместо сплошного */
+  background: linear-gradient(135deg, #4682B4 0%, #1E90FF 100%);
   font-family: 'RoadRadio', sans-serif;
-  color: #FFFAFA;            /* цвет шрифта */
+  color: #FFFAFA;
   line-height: 1.6;
 }
 
@@ -29,12 +30,13 @@ img {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 /* ===== Гамбургер (три полоски) ===== */
 .hamburger {
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 20px;
   width: 30px;
   height: 24px;
@@ -68,7 +70,7 @@ img {
   right: -280px;
   width: 280px;
   height: 100vh;
-  background-color: #1E90FF; /* фоновый цвет меню */
+  background-color: #1E90FF; /* синий фон */
   box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
   z-index: 4;
@@ -125,22 +127,28 @@ header {
   position: relative;
 }
 
+/* Аватарка */
 .avatar {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 4px solid #FFFAFA;
   object-fit: cover;
-  box-shadow: 0 0 20px rgba(30, 144, 255, 0.8); /* свечение #1E90FF */
-  margin-bottom: 20px;
-  background-color: #fff;
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.8); /* лёгкое голубое свечение */
+  margin: 0 auto 20px; /* обязательное центрирование */
+  display: block;
+  transition: transform 0.3s ease;
+}
+.avatar:hover {
+  transform: scale(1.05);
 }
 
+/* «Пузырь» с текстом */
 .speech-bubble {
   max-width: 360px;
   margin: 0 auto;
-  background: #FFFAFA;      /* фон пузыря — почти белый */
-  color: #4682B4;           /* текст внутри — тёмно-синий */
+  background: #FFFAFA;      /* почти белый фон */
+  color: #4682B4;           /* тёмно-синий текст */
   padding: 20px;
   border-radius: 20px;
   position: relative;
@@ -172,7 +180,7 @@ header {
   border-right: 12px solid transparent;
   border-top: 20px solid #FFFAFA;
   margin: 30px auto 0;
-  animation: pulse 1.5s infinite;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 @keyframes pulse {
   0% {
@@ -180,7 +188,7 @@ header {
     opacity: 1;
   }
   50% {
-    transform: translateY(8px);
+    transform: translateY(10px);
     opacity: 0.6;
   }
   100% {
@@ -191,37 +199,51 @@ header {
 
 /* ===== Секция «Мои работы» ===== */
 .works-section {
-  padding: 0 20px 40px;
-  max-width: 800px;
+  padding: 0 20px 60px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .works-section .section-title {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   margin-bottom: 30px;
   color: #FFFAFA;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.works-section .section-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #FFFAFA;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Вертикально выстроенные карточки */
 .works-gallery {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
 }
 
-/* Каждая карточка */
+/* Общие стили для карточек */
 .work-card {
   display: block;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  background-color: #ffffff; /* фон карточки */
 }
 .work-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Контейнер для картинки-превью */
@@ -231,7 +253,7 @@ header {
   height: 0;
   padding-bottom: 56.25%; /* соотношение 16:9 */
   overflow: hidden;
-  background-color: #fff;
+  background-color: #ddd;
 }
 
 /* Превью-картинка */
@@ -242,7 +264,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
 }
 .work-card:hover .work-image {
   transform: scale(1.05);
@@ -290,10 +312,11 @@ header {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 #scrollTopBtn:hover {
   background-color: rgba(30, 144, 255, 1);
+  transform: scale(1.1);
 }
 
 /* ===== Футер с соцсетями ===== */
@@ -301,7 +324,7 @@ header {
   background-color: #1E90FF;
   padding: 20px 0;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 .social-icons {
   display: flex;
@@ -313,10 +336,11 @@ header {
   width: 32px;
   height: 32px;
   filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 .social-icons img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
 }
 .footer-text {
   color: #FFFAFA;
